@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rtsp</title>
+    <style type="text/css">
+        #rtsp{
+        max-width: 480px; 
+        max-height: 360px;
+        }
+
+    </style>
+    <script src="polyfill.min.js"></script>
+    <script src="browser-polyfill.min.js"></script>
+</head>
+<body>
+    <video id='rtsp'></video>
+    <video id='rtsp'></video>
+    <video id='rtsp'></video>
+    <script src="flvjs1.5.0.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+ if (flvjs.isSupported()) {
+
+            let player = flvjs.createPlayer({
+              type: 'flv',
+              isLive: true,
+              hasAudio: false,
+              enableStashBuffer: false, // Enable IO stash buffer. Set to false if you need realtime (minimal latency) for live stream playback, but may stalled if there's network jittering.
+              url: "ws://localhost:8888/rtsp/1/?url=rtsp://170.93.143.139:1935/rtplive/0b01b57900060075004d823633235daa"
+            })
+            player.attachMediaElement(document.getElementById('rtsp'))
+            try {
+              player.load()
+              player.play()
+              console.log('play')
+            } catch (error) {
+              console.log(error)
+            }
+            // if (document.hidden !== undefined) {
+              // document.addEventListener('visibilitychange', this.justifyPlayTime)
+            // }
+          }
+        
+    </script>
+</body>
+</html>

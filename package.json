@@ -1,0 +1,18 @@
+{
+  "name": "rtsp-server",
+  "version": "1.0.0",
+  "description": "rtsp2flv transfer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx run src/index.js"
+  },
+  "author": "benchu1k",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "websocket-stream": "^5.5.2"
+  }
+}
