@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx run src/index.js"
+    "start": "npx run src/index.js",
+    "pkg": "pkg src/index.js --out-path=dist/ --target=node12-win-x64"
   },
   "author": "benchu1k",
   "license": "MIT",
