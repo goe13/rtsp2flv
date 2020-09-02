@@ -20,9 +20,9 @@ function rtspRequestHandle(ws, req) {
   // convert ws instance to stream
   const stream = webSocketStream(ws, {
     binary: true,
-    browserBufferTimeout: 1000000
+    browserBufferTimeout: 100000000
   }, {
-    browserBufferTimeout: 1000000
+    browserBufferTimeout: 100000000
   });
   let url = req.query.url;
   console.log("rtsp url:", url);
